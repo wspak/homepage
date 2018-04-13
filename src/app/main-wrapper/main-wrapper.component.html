@@ -1,0 +1,17 @@
+<div class="mainFrame" [ngClass]="{'sidebarExpended': UiModel.sidebarExpanded==true, 'filmStripExpended': UiModel.filmStripExpanded==true}">
+  <app-main-container></app-main-container>
+  <app-sidebar [ngClass]="{'blog': UiModel.sidebar=='blog', 'portfolio': UiModel.sidebar=='portfolio'}" [UiModel]="UiModel"></app-sidebar>
+  <app-film-strip [UiModel]="UiModel"></app-film-strip>
+
+
+  <div class="modal" [ngClass]="{'active': UiModel.modalActive==true}">
+    <h2>Adrian Krawczyk</h2>
+    tel. <a href="tel:+48508186250">(+48) 508 186 250</a><br/>
+    e-mail: <a href="mailto:adrian.krawczyk@wspak.pl"> adrian.krawczyk@wspak.pl</a>
+    <img src="http://pixla.ch/files/vector_photog.png" alt="" class="camera">
+  </div>
+  <i class="canvasSwitch left" (click)="UiModel.sidebarExpanded = !UiModel.sidebarExpanded;"></i>
+  <i class="canvasSwitch bottom" (click)="UiModel.filmStripExpanded = !UiModel.filmStripExpanded;"></i>
+
+
+</div>
